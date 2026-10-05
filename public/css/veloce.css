@@ -1,0 +1,42 @@
+:root{
+  --asphalt:#111113;
+  --titanium:#1B1C1F;
+  --titanium-2:#232427;
+  --alloy:#8A8D95;
+  --alloy-dim:#57595E;
+  --chrome:#ECEDEF;
+  --ignition:#FF4519;
+  --ignition-soft:rgba(255,69,25,0.14);
+  --line:#2C2D31;
+}
+*{box-sizing:border-box}
+body{background:var(--asphalt);color:var(--chrome);font-family:'Inter',sans-serif;margin:0}
+.font-display{font-family:'Big Shoulders Display',sans-serif;letter-spacing:-0.01em}
+.font-mono{font-family:'JetBrains Mono',monospace}
+.tick{letter-spacing:.14em}
+.hairline{border-color:var(--line)}
+.ticker-track{white-space:nowrap;animation:scroll 30s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-wrap:hover .ticker-track{animation-play-state:paused}
+.car-photo{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.car-photo.placeholder{
+  background:radial-gradient(120% 140% at 20% 0%, var(--titanium-2), var(--titanium));
+}
+.card{transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(0,0,0,.55), 0 0 0 1px var(--line);border-color:#3a3b40}
+.card:hover .car-photo{filter:brightness(1.06)}
+.btn-ignition{background:var(--ignition);color:#20100a}
+.btn-ignition:hover{background:#ff6338;box-shadow:0 10px 28px -10px var(--ignition-soft)}
+.btn-ghost:hover{border-color:var(--chrome);background:rgba(255,255,255,0.03)}
+.underline-grow{position:relative}
+.underline-grow::after{content:'';position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--ignition);transition:width .25s ease}
+.underline-grow:hover::after{width:100%}
+.field{transition:border-color .2s ease, background .2s ease}
+.field:focus{outline:none;border-color:var(--ignition);background:rgba(255,255,255,0.02)}
+.perk{transition:transform .3s ease, border-color .3s ease}
+.perk:hover{transform:translateY(-4px);border-color:#3a3b40}
+::selection{background:var(--ignition);color:#20100a}
